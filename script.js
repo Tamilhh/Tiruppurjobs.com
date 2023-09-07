@@ -92,3 +92,4 @@ function makeCall(contactNumber) {
   // Open the URL, which will trigger the phone call
   window.location.href = phoneUrl;
 }
+

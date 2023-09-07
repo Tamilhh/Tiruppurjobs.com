@@ -21,17 +21,30 @@
     border-radius: 10px;
   }
 
-  @media (max-width: 480px) {
-  label {
-    min-width: 100px; /* Adjust the minimum width as needed */
-  }
-}
-@media (max-width: 480px) {
-  .form-container {
-    min-width: 300px; /* Adjust the minimum width as needed */
-  }
-}
+ /* Your existing CSS styles */
 
+/* Add a media query for screens with a maximum width of 768px (typical mobile devices) */
+@media (max-width: 768px) {
+    /* Adjust form width and center it on smaller screens */
+    #jobform {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    /* Ensure form elements take up full width */
+    #jobform label,
+    #jobform input,
+    #jobform textarea,
+    #jobform button {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+  
+  /* Your existing CSS styles continue here */
+  
 
   /* Input and textarea styles */
   input[type="text"],
