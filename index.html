@@ -116,9 +116,9 @@
     <label for="contactno">Contact No:</label>
     <input type="tel" id="contactno" name="contactno" pattern="[6-9][0-9]{9}" title="Please enter a valid 10-digit phone number starting with a digit between 6 and 9." required placeholder="10 digits mobile no">
 
-    <label for="description">Description:</label>
+    <label for="description">Qualification and Description:</label>
     <!-- Increase the number of columns for a wider textarea -->
-    <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter job description"></textarea>
+    <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter job description and Qualification"></textarea>
 
     <!-- Add some spacing/margin here -->
 
@@ -306,19 +306,20 @@ function displayJobListings(jobListings) {
 
     var adHtml = `
       <div class="job-ad ${adClass}">
-        <div class="vacancy-position">Vacancy Position: ${jobListing.vacancyPosition}</div>
-        <div class="company">Company: ${jobListing.companyName}</div>
-        <div class="info">
-          <div class="positions">No. of Positions: ${jobListing.noOfPositions}</div>
-          <div class="experience">Minimum Experience in years: ${jobListing.experience}</div>
-          <div class="salary">Salary Range: ${jobListing.salaryRange}</div>
-          <div class="location">Location: ${jobListing.companyLocation}</div>
-          <div class="description">Description: ${jobListing.description}</div>
-          <div class="contact">Contact No: ${jobListing.contactNo}</div>
-          <div class="call-button"><button onclick="makeCall('${jobListing.contactNo}')">Call Now</button></div>
-          <div class="posted-date">Posted on: ${jobListing.postingDate}</div>
-        </div>
-      </div>
+    <div class="vacancy-position"><strong>Vacancy Position:</strong> ${jobListing.vacancyPosition}</div>
+    <div class="company"><strong>Company:</strong> ${jobListing.companyName}</div>
+    <div class="info">
+      <div class="positions"><strong>No. of Positions:</strong> ${jobListing.noOfPositions}</div>
+      <div class="experience"><strong>Minimum Experience in years:</strong> ${jobListing.experience}</div>
+      <div class="salary"><strong>Salary Range:</strong> ${jobListing.salaryRange}</div>
+      <div class="location"><strong>Location:</strong> ${jobListing.companyLocation}</div>
+      <!-- Only make the "Description" text bold -->
+      <div class="description"><strong>Description:</strong> ${jobListing.description}</div>
+      <div class="contact"><strong>Contact No:</strong> ${jobListing.contactNo}</div>
+      <div class="call-button"><button onclick="makeCall('${jobListing.contactNo}')">Call Now</button></div>
+      <div class="posted-date"><strong>Posted on:</strong> ${jobListing.postingDate}</div>
+    </div>
+  </div>
     `;
 
     adsHtml = adHtml + adsHtml; // Add the new ad before the existing ads
